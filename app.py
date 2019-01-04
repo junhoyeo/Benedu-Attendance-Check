@@ -2,7 +2,10 @@
 
 import json
 import logging
+import os.path
 from selenium import webdriver
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def auto_check(user):
     """Auto Benedu Attendance Check with user credentials"""
@@ -14,7 +17,8 @@ def auto_check(user):
     options.add_argument("disable-gpu")
 
     try:
-        driver = webdriver.Chrome('./chromedriver', chrome_options=options)
+        driver_path = os.path.join(CURRENT_DIR, './chromedriver')
+        driver = webdriver.Chrome(driver_path, chrome_options=options)
         driver.get('https://benedu.co.kr/Index.aspx')
 
         # click login button
@@ -44,7 +48,7 @@ def auto_check(user):
 def main():
     """Dedicated main function"""
 
-    with open('./secret.json', 'r') as file:
+    with open(os.path.join(CURRENT_DIR, './secret.json'), 'r') as file:
         user = json.load(file)
     result = auto_check(user)
     print(json.dumps(result))

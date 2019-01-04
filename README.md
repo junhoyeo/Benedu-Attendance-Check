@@ -23,11 +23,11 @@ $ python3 app.py
 - `points`: 출석체크 이후 사용자 포인트
 - `rank`: 출석체크 이후 사용자 등수
 
-4. crontab
+4. `crontab`
 
 ```bash
 $ crontab -l
-0 0 * * * python3 Desktop/Benedu-Attendance-Check/app.py
+0 0 * * * /usr/local/bin/python3 /Users/junhoyeo/Desktop/Benedu-Attendance-Check/app.py
 ```
 
 매일 0시 0분마다 자동 실행
