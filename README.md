@@ -31,3 +31,8 @@ $ crontab -l
 ```
 
 매일 0시 0분마다 자동 실행
+
+5. Profit!
+
+![](./img/1.png)
+![](./img/2.png)
