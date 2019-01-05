@@ -29,13 +29,16 @@ def auto_check(user):
         driver.find_element_by_id('inputEmail').send_keys(user['email'])
         driver.find_element_by_id('inputPassword').send_keys(user['password'])
         driver.find_element_by_id('btnLogin').click()
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(10)
 
-        # get points and rank
-        points = driver.find_element_by_id('ucMenuStd_MyPoint_Menu').text
-        points = int(points.replace('점', ''))
-        rank = driver.find_element_by_id('ucMenuStd_Rank_Menu').text
-        rank = int(rank.replace('위', ''))
+        try:
+            # get points and rank
+            points = driver.find_element_by_id('ucMenuStd_MyPoint_Menu').text
+            points = int(points.replace('점', ''))
+            rank = driver.find_element_by_id('ucMenuStd_Rank_Menu').text
+            rank = int(rank.replace('위', ''))
+        except:
+            rank = points = None
 
         driver.quit()
         return {'success': True, 'points': points, 'rank': rank}

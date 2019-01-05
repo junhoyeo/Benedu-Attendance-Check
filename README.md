@@ -27,12 +27,12 @@ $ python3 app.py
 
 ```bash
 $ crontab -l
-0 0 * * * /usr/local/bin/python3 /Users/junhoyeo/Desktop/Benedu-Attendance-Check/app.py
+0 3 * * * /usr/local/bin/python3 /Users/junhoyeo/Desktop/Benedu-Attendance-Check/app.py
 ```
 
-매일 0시 0분마다 자동 실행
+매일 0시 3분마다 자동 실행(시간 딜레이가 있을 수 있음)
 
 5. Profit!
 
-![](./img/1.png)
-![](./img/2.png)
+<img src="./img/1.png" width=800><br>
+<img src="./img/2.png" width=800>
